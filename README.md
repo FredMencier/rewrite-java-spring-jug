@@ -1,0 +1,1 @@
+mvn -Drewrite.recipeArtifactCoordinates="com.lodh.arte:rewrite-recipes:1.0.11, com.lodh.arte:rewrite-springboot-recipes:1.0.11" -Drewrite.activeRecipes="com.lodh.migrateSpringboot.4xTo5x" org.openrewrite.maven:rewrite-maven-plugin:5.46.1:run
