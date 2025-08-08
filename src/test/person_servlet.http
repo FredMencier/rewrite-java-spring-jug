@@ -1,0 +1,12 @@
+POST http://localhost:8080/person-app/personjson
+Content-Type: application/json
+
+{
+  "email": "marcel@hesge.ch",
+  "name": "marcel",
+  "age": 30,
+  "genre": "MASCULIN",
+  "birthday": "2006-01-15"
+}
+
+###

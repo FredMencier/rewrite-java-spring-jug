@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person List</title>
+    <script>
+        async function fetchPersons() {
+            const email = document.getElementById("email").value;
+            const url = email ? `/person-app/person?email=${encodeURIComponent(email)}` : `/person-app/person`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                displayPersons(Array.isArray(data) ? data : [data]);
+            } catch (error) {
+                console.error("Error fetching persons:", error);
+                alert("Failed to fetch persons. Check the console for details.");
+            }
+        }
+
+        function displayPersons(persons) {
+            const tableBody = document.getElementById("personTableBody");
+            tableBody.innerHTML = ""; // Clear previous results
+
+            persons.forEach(person => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${person.email}</td>
+                    <td>${person.name}</td>
+                    <td>${person.age}</td>
+                    <td>${person.genre}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+    </script>
+</head>
+<body>
+<h1>Person List</h1>
+<div>
+    <label for="email">Email (optional):</label>
+    <input type="text" id="email" name="email">
+    <button onclick="fetchPersons()">Fetch Persons</button>
+</div>
+<br>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Email</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Genre</th>
+    </tr>
+    </thead>
+    <tbody id="personTableBody">
+    <!-- Results will be displayed here -->
+    </tbody>
+</table>
+<br>
+<h1>Add a New Person</h1>
+<form method="post" action="/person-app/person">
+    <label>Email:</label>
+    <input type="email" name="email" required><br>
+    <label>Name:</label>
+    <input type="text" name="name" required><br>
+    <label>Age:</label>
+    <input type="number" name="age" required><br>
+    <label>Genre:</label>
+    <select name="genre" required>
+        <option value="MASCULIN">Masculin</option>
+        <option value="FEMININ">Féminin</option>
+    </select><br>
+    <button type="submit">Add Person</button>
+</form>
+</body>
+</html>
