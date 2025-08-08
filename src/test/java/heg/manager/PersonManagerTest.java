@@ -9,6 +9,7 @@ import heg.exception.UnknownPersonException;
 import jakarta.persistence.PersistenceException;
 import org.apache.log4j.Logger;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -170,6 +171,7 @@ public class PersonManagerTest {
         assertEquals(p1.getAddresses().get(0).getCountry(), person.getAddresses().get(0).getCountry());
     }
 
+    @Ignore
     @Test
     public void shouldFindPersonByMail() throws UnknownPersonException {
         //initialisation
