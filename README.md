@@ -1,6 +1,6 @@
 Back to jnuit4
 ```bash
-git reset --hard f110cf1
+git reset --hard eb22e18
 ```
 
 Execution de recettes OpenRewrite directement dans un projet
