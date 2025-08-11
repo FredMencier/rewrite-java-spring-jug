@@ -1,4 +1,10 @@
+Back to jnuit4
+```bash
+git reset --hard f110cf1
+```
+
 Execution de recettes OpenRewrite directement dans un projet
+- Voir config maven du projet dans le fichier `pom.xml`
 
 
 Execution de recettes OpenRewrite sans modification du projet
