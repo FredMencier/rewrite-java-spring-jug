@@ -5,7 +5,9 @@ git reset --hard eb22e18
 
 Execution de recettes OpenRewrite directement dans un projet
 - Voir config maven du projet dans le fichier `pom.xml`
-
+```shell
+mvn rewrite:run
+```
 
 Execution de recettes OpenRewrite sans modification du projet
 ## JUnit 4 to JUnit 5 Migration

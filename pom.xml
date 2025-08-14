@@ -126,16 +126,8 @@
                 <configuration>
                     <activeRecipes>
                         <recipe>org.openrewrite.java.OrderImports</recipe>
-<!--                        <recipe>org.openrewrite.java.testing.junit5.JUnit4to5Migration</recipe>-->
                     </activeRecipes>
                 </configuration>
-<!--                <dependencies>-->
-<!--                    <dependency>-->
-<!--                        <groupId>org.openrewrite.recipe</groupId>-->
-<!--                        <artifactId>rewrite-testing-frameworks</artifactId>-->
-<!--                        <version>3.14.1</version>-->
-<!--                    </dependency>-->
-<!--                </dependencies>-->
             </plugin>
         </plugins>
     </build>
