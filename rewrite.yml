@@ -1,0 +1,11 @@
+type: specs.openrewrite.org/v1beta/recipe
+name: org.fredmencier.MyRecipe
+displayName: MyRecipe
+description: ""
+preconditions:
+  - org.openrewrite.java.search.FindTypes:
+      fullyQualifiedTypeName: org.junit.Test
+recipeList:
+  - org.openrewrite.java.OrderImports:
+      removeUnused: true
+  - org.openrewrite.java.testing.junit5.JUnit4to5Migration

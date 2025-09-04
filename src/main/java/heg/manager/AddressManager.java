@@ -63,6 +63,8 @@ public class AddressManager {
     public List<Address> findByStreetName(final String street) {
         TypedQuery<Address> namedQuery = entityManager.createNamedQuery(ADDRESS_ENTITY_FIND_STREET, Address.class);
         namedQuery.setParameter("street", street);
+        String format = String.format("find address with street name %s", street);
+        LOG.info(format);
         return namedQuery.getResultList();
     }
 }
